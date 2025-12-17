@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aşk Testi</title>
+    <title>Sudiş & Melihkuş Aşk Testi</title>
     <style>
         body {
             display: flex;
@@ -15,7 +15,7 @@
             background-color: #fce4ec;
             font-family: 'Arial', sans-serif;
             text-align: center;
-            overflow-x: hidden; /* Taşmaları engeller */
+            overflow: hidden; /* Büyüme sırasında kaydırma çubuğu çıkmasın */
         }
         .container {
             max-width: 600px;
@@ -23,17 +23,19 @@
         }
         #resim-alani img {
             width: 250px;
+            border: 5px solid white;
             border-radius: 15px;
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
         }
-        h1 { color: #d81b60; margin-bottom: 30px; }
+        h1 { color: #d81b60; margin-bottom: 30px; font-size: 28px; }
         .buton-grubu {
             display: flex;
             gap: 20px;
             justify-content: center;
             align-items: center;
-            flex-wrap: wrap; /* Butonlar büyüdükçe alt alta geçebilir */
+            flex-wrap: wrap;
+            margin-top: 20px;
         }
         button {
             padding: 15px 25px;
@@ -42,7 +44,8 @@
             cursor: pointer;
             border: none;
             border-radius: 10px;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         #melih-btn { background-color: #2196f3; color: white; }
         #sude-btn { background-color: #f48fb1; color: white; }
@@ -50,6 +53,7 @@
             margin-top: 40px;
             font-size: 22px;
             color: #880e4f;
+            font-weight: bold;
             min-height: 30px;
         }
     </style>
@@ -58,14 +62,14 @@
 
     <div class="container">
         <div id="resim-alani">
-            <img id="ana-resim" src="https://via.placeholder.com/300" alt="Resim">
+            <img id="ana-resim" src="resim.jpg" alt="Sudiş ve Melihkuş">
         </div>
 
         <h1 id="soru">Sence kim daha çok seviyor?</h1>
 
         <div class="buton-grubu">
-            <button id="melih-btn" onclick="dogruCevap()">Melih daha çok seviyor</button>
-            <button id="sude-btn" onclick="yanlisCevap()">Sude daha çok seviyor</button>
+            <button id="melih-btn" onclick="melihBuyut()">Melih daha çok seviyor</button>
+            <button id="sude-btn" onclick="sudeTiklandi()">Sude daha çok seviyor</button>
         </div>
 
         <div id="mesaj"></div>
